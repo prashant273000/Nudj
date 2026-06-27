@@ -97,15 +97,12 @@ fun     RegisterScreenLayout(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(44.dp)
             ) {
-                val buttonModifier = Modifier.weight(1f).fillMaxHeight()
-
                 RoleSelectionButton(
                     text = "Student",
                     isSelected = currentRole == Role.USER,
                     onClick = { onRoleSelected(Role.USER) },
-                    modifier = buttonModifier
+                    modifier = Modifier.weight(1f)
                 )
 
                 Spacer(modifier = Modifier.width(16.dp))
@@ -114,7 +111,7 @@ fun     RegisterScreenLayout(
                     text = "Admin",
                     isSelected = currentRole == Role.ADMIN,
                     onClick = { onRoleSelected(Role.ADMIN) },
-                    modifier = buttonModifier
+                    modifier = Modifier.weight(1f)
                 )
             }
 
@@ -122,7 +119,7 @@ fun     RegisterScreenLayout(
 
             Text(
                 text = "CREATE ACCOUNT",
-                color = MaterialTheme.colorScheme.primary,
+                color = LocalAppColors.current.onBackground,
                 style = MaterialTheme.typography.titleMedium
             )
 

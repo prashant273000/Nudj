@@ -61,7 +61,8 @@ import com.tpc.nudj.ui.theme.LocalAppColors
 
 @Composable
 fun LoginScreen(
-    viewModel: LoginViewModel = hiltViewModel()
+    viewModel: LoginViewModel = hiltViewModel(),
+    navigateToCreateAccount: () ->Unit
 ) {
     Scaffold(containerColor = LocalAppColors.current.background) { paddingValues ->
         val uiState by viewModel.loginUiState.collectAsState()
@@ -82,7 +83,7 @@ fun LoginScreen(
                 onRoleSelected = { role ->
                     viewModel.onRoleSelected(role)
                 },
-                onCreateAccount = viewModel::onCreateAccount,
+                onCreateAccount = navigateToCreateAccount,
             )
         }
     }

@@ -53,6 +53,4 @@ class LoginViewModel @Inject constructor() : ViewModel() {
         }
     }
 
-    fun onCreateAccount()  {}
-
 }

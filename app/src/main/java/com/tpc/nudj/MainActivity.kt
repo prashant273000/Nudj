@@ -82,11 +82,17 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         entry<ScreenRoute.Auth.Login> {
-                            LoginScreen()
+                            LoginScreen(
+                                navigateToCreateAccount ={
+                                    backStack.add(ScreenRoute.Auth.Register)
+                                }
+                            )
                         }
                         entry<ScreenRoute.Auth.Register> {
                             RegisterScreen(
-                                onNavigateBack = {}
+                                onNavigateToLogin = {
+                                    backStack.add(ScreenRoute.Auth.Login)
+                                }
                             )
                         }
                         entry<ScreenRoute.Auth.EmailVerification> {
