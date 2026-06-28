@@ -24,4 +24,5 @@ class ForgotPasswordViewModel @Inject constructor() : ViewModel() {
     fun onSendEmailClick(){
 
     }
+
 }
