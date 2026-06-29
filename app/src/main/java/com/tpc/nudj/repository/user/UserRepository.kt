@@ -2,13 +2,20 @@ package com.tpc.nudj.repository.user
 
 import com.tpc.nudj.model.ClubUser
 import com.tpc.nudj.model.NormalUser
+import com.tpc.nudj.model.enums.Role
 
 interface UserRepository {
+
+    suspend fun createUserProfile(uid: String,email:String,role: Role): Boolean
+
+    suspend fun fetchUserRole(uid: String): Role
     suspend fun checkUserTypeAndNavigate(
         onNormalUser: () -> Unit,
         onClubUser: () -> Unit,
         onUserNotFound: () -> Unit
     )
+
+    suspend fun fetchClubVerificationStatus(uid: String): String
 
     suspend fun saveUser(user: NormalUser): Boolean
 

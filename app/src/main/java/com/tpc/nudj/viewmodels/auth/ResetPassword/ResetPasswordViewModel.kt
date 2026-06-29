@@ -1,7 +1,7 @@
 package com.tpc.nudj.viewmodels.auth.ResetPassword
 
 import androidx.lifecycle.ViewModel
-import com.tpc.nudj.ui.screen.auth.Reset.ResetPasswordUiState
+import com.tpc.nudj.ui.screen.auth.reset.ResetPasswordUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

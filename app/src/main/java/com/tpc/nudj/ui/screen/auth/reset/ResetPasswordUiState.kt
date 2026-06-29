@@ -1,4 +1,4 @@
-package com.tpc.nudj.ui.screen.auth.Reset
+package com.tpc.nudj.ui.screen.auth.reset
 
 data class ResetPasswordUiState(
     val isLoading: Boolean = false,

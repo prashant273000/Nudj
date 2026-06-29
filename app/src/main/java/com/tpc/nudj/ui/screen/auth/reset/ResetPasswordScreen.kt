@@ -1,4 +1,4 @@
-package com.tpc.nudj.ui.screen.auth.Reset
+package com.tpc.nudj.ui.screen.auth.reset
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
