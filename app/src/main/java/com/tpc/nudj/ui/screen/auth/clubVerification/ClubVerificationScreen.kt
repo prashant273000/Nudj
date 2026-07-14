@@ -42,7 +42,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun ClubVerificationScreen(
     viewModel: ClubVerificationViewModel = hiltViewModel(),
-    onNavigationBack: () -> Unit
+    onNavigationBack: () -> Unit,
+    onNavigateToDashboard: () -> Unit
 ) {
     val clubVerificationUiState by viewModel.clubVerificationUiState.collectAsStateWithLifecycle()
 
@@ -57,15 +58,14 @@ fun ClubVerificationScreen(
             onBackClick = onNavigationBack,
             snackbarHostState = snackbarHostState,
             onCheckStatusClick = {
-                viewModel.onCheckStatusClick()
-                scope.launch {
-                    val message = if(clubVerificationUiState.isVerified){
-                        "Verified"
-                    } else {
-                        "Not Verified"
+                viewModel.onCheckStatusClick(
+                    onApproved = onNavigateToDashboard,
+                    onMessage = { message ->
+                        scope.launch {
+                            snackbarHostState.showSnackbar(message)
+                        }
                     }
-                    snackbarHostState.showSnackbar(message)
-                }
+                )
             }
         )
     }

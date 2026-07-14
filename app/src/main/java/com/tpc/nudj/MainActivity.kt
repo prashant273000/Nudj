@@ -156,7 +156,15 @@ class MainActivity : ComponentActivity() {
                             ClubLandingScreen()
                         }
                         entry<ScreenRoute.App.ClubVerificationScreen>{
-                            ClubVerificationScreen(onNavigationBack = {})
+                            ClubVerificationScreen(
+                                onNavigationBack = {
+                                    backStack.removeLast()
+                                },
+                                onNavigateToDashboard = {
+                                    backStack.clear()
+                                    backStack.add(ScreenRoute.App.ClubDashboard)
+                                }
+                            )
                         }
                         entry<ScreenRoute.App.UserDetailsInput> {
                             DemoScreen(text = "User Details Input")
