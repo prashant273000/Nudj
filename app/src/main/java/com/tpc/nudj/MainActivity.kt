@@ -158,7 +158,7 @@ class MainActivity : ComponentActivity() {
                         entry<ScreenRoute.App.ClubVerificationScreen>{
                             ClubVerificationScreen(
                                 onNavigationBack = {
-                                    backStack.removeLast()
+                                    backStack.removeLastOrNull()
                                 },
                                 onNavigateToDashboard = {
                                     backStack.clear()
