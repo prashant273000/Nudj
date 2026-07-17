@@ -54,7 +54,7 @@ class ClubVerificationViewModel @Inject constructor(
                 _clubVerificationUiState.update {
                     it.copy(isLoading = false)
                 }
-                onMessage("Error checking status: ${e.message}")
+                onMessage("Error checking status. Please try again.")
             }
         }
     }
